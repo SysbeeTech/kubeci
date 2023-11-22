@@ -72,17 +72,16 @@ RUN set -x \
 # Install helmfile
 # renovate: datasource=github-release-attachments depName=helmfile/helmfile versioning=semver
 ARG HELMFILE_VERSION=v0.158.1
-ARG HELMFILE_FILENAME="helmfile_${HELMFILE_VERSION}_linux_${TARGETARCH}.tar.gz"
 
 RUN set -x \
-    && curl -LO  https://github.com/helmfile/helmfile/releases/download/v${HELMFILE_VERSION}/${HELMFILE_FILENAME}
+    && curl -LO  https://github.com/helmfile/helmfile/releases/download/${HELMFILE_VERSION}/helmfile_${HELMFILE_VERSION#v}_linux_${TARGETARCH}.tar.gz
 RUN set -x \
     && echo Verifying Helmfile file integrity... \
-    && curl -LO https://github.com/helmfile/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_${HELMFILE_VERSION}_checksums.txt \
-    && sha256sum -c helmfile_${HELMFILE_VERSION}_checksums.txt --ignore-missing
+    && curl -LO https://github.com/helmfile/helmfile/releases/download/${HELMFILE_VERSION}/helmfile_${HELMFILE_VERSION#v}_checksums.txt \
+    && sha256sum -c helmfile_${HELMFILE_VERSION#v}_checksums.txt --ignore-missing
 RUN set -x \
     && echo Extracting Helmfile... \
-    && tar zxvf ${HELMFILE_FILENAME} \
+    && tar zxvf helmfile_${HELMFILE_VERSION#v}_linux_${TARGETARCH}.tar.gz \
     && chmod +x helmfile \
     && mv -v helmfile /tmp/binaries/
 
