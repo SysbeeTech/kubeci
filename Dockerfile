@@ -31,7 +31,7 @@ RUN set -x \
 
 # Install SOPS
 # renovate: datasource=github-release-attachments depName=getsops/sops versioning=semver
-ARG SOPS_VERSION=v3.8.0
+ARG SOPS_VERSION=v3.8.1
 ARG SOPS_FILENAME="sops-${SOPS_VERSION}.linux.${TARGETARCH}"
 
 RUN set -x \
