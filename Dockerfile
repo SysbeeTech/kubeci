@@ -88,17 +88,16 @@ RUN set -x \
 # Install vals
 # renovate: datasource=github-release-attachments depName=helmfile/vals versioning=semver
 ARG HELMFILE_VALS_VERSION=v0.29.0
-ARG HELMFILE_VALS_FILENAME="vals_${HELMFILE_VALS_VERSION}_linux_${TARGETARCH}.tar.gz"
 
 RUN set -x \
-    && curl -LO https://github.com/helmfile/vals/releases/download/v${HELMFILE_VALS_VERSION}/${HELMFILE_VALS_FILENAME}
+    && curl -LO https://github.com/helmfile/vals/releases/download/${HELMFILE_VALS_VERSION}/vals_${HELMFILE_VALS_VERSION#v}_linux_${TARGETARCH}.tar.gz
 RUN set -x \
     && echo Verifying Helmfile Vals... \
-    && curl -LO https://github.com/helmfile/vals/releases/download/v${HELMFILE_VALS_VERSION}/vals_${HELMFILE_VALS_VERSION}_checksums.txt \
-    && sha256sum -c vals_${HELMFILE_VALS_VERSION}_checksums.txt --ignore-missing
+    && curl -LO https://github.com/helmfile/vals/releases/download/${HELMFILE_VALS_VERSION}/vals_${HELMFILE_VALS_VERSION#v}_checksums.txt \
+    && sha256sum -c vals_${HELMFILE_VALS_VERSION#v}_checksums.txt --ignore-missing
 RUN set -x \
     && echo Extracting Helmfile Vals... \
-    && tar zxvf ${HELMFILE_VALS_FILENAME} \
+    && tar zxvf vals_${HELMFILE_VALS_VERSION#v}_linux_${TARGETARCH}.tar.gz \
     && mv -v vals /tmp/binaries/
 
 # Install Helm plugins
