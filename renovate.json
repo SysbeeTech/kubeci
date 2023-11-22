@@ -3,7 +3,8 @@
   "extends": [
     "config:recommended",
     ":semanticCommits",
-    ":semanticCommitTypeAll(ci)"
+    ":semanticCommitTypeAll(ci)",
+    ":assignAndReview(btoic)"
   ],
 "customManagers": [
     {
