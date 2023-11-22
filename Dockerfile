@@ -119,7 +119,7 @@ RUN set -x \
 
 FROM debian:12.2-slim
 MAINTAINER "branko@sysbee.net"
-LABEL org.opencontainers.image.source https://github.com/btoic/kubeci_test
+LABEL org.opencontainers.image.source https://github.com/sysbeetech/kubeci
 COPY --from=builder /tmp/binaries/ /usr/local/bin/
 COPY --from=builder /root/.local/ /root/.local/
 RUN apt-get update \
