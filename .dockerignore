@@ -1,0 +1,7 @@
+README.md
+.github/
+.git/
+renovate.json
+.clog.toml
+CHANGELOG.md
+tests.yaml

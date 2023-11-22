@@ -1,0 +1,99 @@
+schemaVersion: '2.0.0' # Make sure to test the latest schema version
+commandTests:
+- name: "Test if kubectl is installed"
+  command: "kubectl"
+  args:
+    - "version"
+    - "--output=yaml"
+    - "--client=true"
+  expectedOutput:
+    - ".*clientVersion.*"
+  exitCode: 0
+
+- name: "Test if SOPS is installed"
+  command: "sops"
+  args:
+    - "-v"
+  expectedOutput:
+    - ".*sops.*"
+  exitCode: 0
+
+- name: "Test if Helm is installed"
+  command: "helm"
+  args:
+    - "version"
+  expectedOutput:
+    - ".*version.*"
+  exitCode: 0
+
+- name: "Test if Helmfile is installed"
+  command: "helmfile"
+  args:
+    - "-v"
+  expectedOutput:
+    - ".*helmfile.*"
+  exitCode: 0
+
+- name: "Test if Vals is installed"
+  command: "vals"
+  args:
+    - "version"
+  expectedOutput:
+    - ".*Version.*"
+  exitCode: 0
+
+- name: "Test if Helm is installed"
+  command: "helm"
+  args:
+    - "version"
+  expectedOutput:
+    - ".*version.*"
+  exitCode: 0
+
+- name: "Test if Helm diff is installed"
+  command: "helm"
+  args:
+    - "diff"
+    - "version"
+  exitCode: 0
+
+- name: "Test if Helm git is installed"
+  command: "helm"
+  args:
+    - "plugin"
+    - "list"
+  expectedOutput:
+    - ".*helm-git.*"
+  exitCode: 0
+
+- name: "Test if aws-cli is installed"
+  command: "aws"
+  args:
+    - "--version"
+  expectedOutput:
+    - ".*aws-cli.*"
+  exitCode: 0
+
+- name: "Test if yamllint is installed"
+  command: "yamllint"
+  args:
+    - "-v"
+  expectedOutput:
+    - ".*yamllint.*"
+  exitCode: 0
+
+- name: "Test if git is installed"
+  command: "git"
+  args:
+    - "--version"
+  expectedOutput:
+    - ".*git.*"
+  exitCode: 0
+
+- name: "Test if curl is installed"
+  command: "curl"
+  args:
+    - "--version"
+  expectedOutput:
+    - ".*curl.*"
+  exitCode: 0

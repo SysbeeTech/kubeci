@@ -1,0 +1,7 @@
+[clog]
+repository = "https://github.com/btoic/kubeci_test"
+changelog = "CHANGELOG.md"
+from-latest-tag = true
+
+[sections]
+Deps = ["ci"]
