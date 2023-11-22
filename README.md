@@ -2,6 +2,20 @@
 
 KubeCI is Debian based container image packed with toolset for deploying Helm charts via Helmfile into Kubernetes clusters.
 
+## Image availability
+
+Current image is available on Dockerhub via:
+
+```
+docker pull sysbee/kubeci
+```
+
+or Github container registry:
+
+```
+docker pull ghcr.io/sysbeetech/kubeci
+```
+
 ## Versioning
 
 KubeCI uses semver for tagging container images tracking major and minor with kubectl.
