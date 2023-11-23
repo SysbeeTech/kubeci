@@ -122,7 +122,7 @@ COPY --from=builder /tmp/binaries/ /usr/local/bin/
 COPY --from=builder /root/.local/ /root/.local/
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install --no-install-recommends -y awscli yamllint git curl \
+    && apt-get install --no-install-recommends -y awscli yamllint git curl ca-certificates openssl \
     && apt-get autoremove -y \
     && apt-get clean autoclean\
     && rm -rf /var/lib/apt/lists/*
