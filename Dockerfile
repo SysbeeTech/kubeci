@@ -71,7 +71,7 @@ RUN set -x \
 
 # Install helmfile
 # renovate: datasource=github-release-attachments depName=helmfile/helmfile versioning=semver
-ARG HELMFILE_VERSION=v0.158.1
+ARG HELMFILE_VERSION=v0.159.0
 
 RUN set -x \
     && curl -LO  https://github.com/helmfile/helmfile/releases/download/${HELMFILE_VERSION}/helmfile_${HELMFILE_VERSION#v}_linux_${TARGETARCH}.tar.gz
