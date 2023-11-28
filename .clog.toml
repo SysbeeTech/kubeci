@@ -1,5 +1,5 @@
 [clog]
-repository = "https://github.com/btoic/kubeci_test"
+repository = "https://github.com/SysbeeTech/kubeci"
 changelog = "CHANGELOG.md"
 from-latest-tag = true
 
