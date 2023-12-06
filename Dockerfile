@@ -9,7 +9,7 @@ RUN apt-get update \
 
 # Install Cosign for verifying other packages
 # renovate: datasource=github-release-attachments depName=sigstore/cosign versioning=semver
-ARG COSIGN_VERSION=v2.2.1
+ARG COSIGN_VERSION=v2.2.2
 RUN curl -O -L "https://github.com/sigstore/cosign/releases/download/${COSIGN_VERSION}/cosign_${COSIGN_VERSION#v}_${TARGETARCH}.deb" \
     && dpkg -i cosign_${COSIGN_VERSION#v}_${TARGETARCH}.deb
 
