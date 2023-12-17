@@ -87,7 +87,7 @@ RUN set -x \
 
 # Install vals
 # renovate: datasource=github-release-attachments depName=helmfile/vals versioning=semver
-ARG HELMFILE_VALS_VERSION=v0.30.0
+ARG HELMFILE_VALS_VERSION=v0.31.0
 
 RUN set -x \
     && curl -LO https://github.com/helmfile/vals/releases/download/${HELMFILE_VALS_VERSION}/vals_${HELMFILE_VALS_VERSION#v}_linux_${TARGETARCH}.tar.gz
