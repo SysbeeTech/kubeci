@@ -107,7 +107,7 @@ ARG HELM_DIFF_VERSION=v3.9.2
 # renovate: datasource=github-release-attachments depName=jkroepke/helm-secrets versioning=semver
 ARG HELM_SECRETS_VERSION=v4.5.1
 # renovate: datasource=github-release-attachments depName=aslafy-z/helm-git versioning=semver
-ARG HELM_GIT_VERSION=v0.15.1
+ARG HELM_GIT_VERSION=v0.17.0
 
 RUN set -x \
     && export PATH=$PATH:/tmp/binaries \
