@@ -1,4 +1,4 @@
-FROM debian:12.4-slim AS builder
+FROM debian:12.7-slim AS builder
 MAINTAINER "branko@sysbee.net"
 
 ARG TARGETARCH TARGETPLATFORM
@@ -115,7 +115,7 @@ RUN set -x \
     && helm plugin install https://github.com/jkroepke/helm-secrets --version ${HELM_SECRETS_VERSION} \
     && helm plugin install https://github.com/aslafy-z/helm-git.git --version ${HELM_GIT_VERSION}
 
-FROM debian:12.4-slim
+FROM debian:12.7-slim
 MAINTAINER "branko@sysbee.net"
 LABEL org.opencontainers.image.source https://github.com/sysbeetech/kubeci
 COPY --from=builder /tmp/binaries/ /usr/local/bin/
