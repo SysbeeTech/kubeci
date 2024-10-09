@@ -55,7 +55,7 @@ RUN set -x \
 
 # Install Helm
 # renovate: datasource=github-release-attachments depName=helm/helm versioning=semver
-ARG HELM_VERSION=v3.13.3
+ARG HELM_VERSION=v3.16.2
 ARG HELM_FILENAME="helm-${HELM_VERSION}-linux-${TARGETARCH}.tar.gz"
 
 RUN set -x \
