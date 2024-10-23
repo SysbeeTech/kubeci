@@ -17,7 +17,7 @@ RUN mkdir -p /tmp/binaries
 
 # Install kubectl
 # renovate: datasource=github-release-attachments depName=kubernetes/kubernetes versioning=semver
-ARG KUBECTL_VERSION=v1.28.4
+ARG KUBECTL_VERSION=v1.31.2
 
 RUN set -x \
     && curl -LO https://cdn.dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/${TARGETARCH}/kubectl
